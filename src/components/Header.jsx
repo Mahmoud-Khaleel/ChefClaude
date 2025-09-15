@@ -1,3 +1,10 @@
+import logo from "../images/logo.png";
+
 export default function Header() {
-  return <h1>Welcome in Header</h1>;
+  return (
+    <header>
+      <img src={logo} alt="logo" />
+      <h1>Chef Claude</h1>
+    </header>
+  );
 }
