@@ -1,5 +1,6 @@
+import React from "react";
 export default function Main() {
-  const ingredients = ["Chicken", "Oregano", "Tomatoes"];
+  const [ingredients, setIngredients] = React.useState([]);
 
   const ingredientsListItems = ingredients.map((ing) => (
     <li key={ing}>{ing}</li>
@@ -9,8 +10,7 @@ export default function Main() {
     event.preventDefault();
     const formData = new FormData(event.currentTarget);
     const newIngredients = formData.get("ingredient");
-    ingredients.push(newIngredients);
-    console.log(ingredients);
+    setIngredients((preIngredients) => [...preIngredients, newIngredients]);
   }
 
   return (
@@ -28,3 +28,5 @@ export default function Main() {
     </main>
   );
 }
+
+//State: refers to values that are managed by the component, similar to variables declared inside a function, Any time you have changing values that should be saved/display, you'll kikely be using state
